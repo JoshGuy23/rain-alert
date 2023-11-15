@@ -12,7 +12,9 @@ First, get your desired latitude and longitude from https://www.latlong.net/ and
 
 Second, you will need to get an App Password for the email account that will be sending the email. The steps on how to get this varies depending on the email client being used.
 
-Third, you will need to get an API Key from https://openweathermap.org/ by created a free account.
+Third, you will need to get an API Key from https://openweathermap.org/ by creating a free account.
+
+Then, follow the instructions on creating an environment file.
 
 ### Create an environment file
 
