@@ -1,8 +1,11 @@
 import requests
 import os
 import smtplib
+from dotenv import load_dotenv
 
-API_KEY = os.environ["API_KEY"]
+load_dotenv()
+
+API_KEY = os.getenv("API_KEY")
 LAT = 32.557152
 LON = -94.739410
 # SAN_LAT = 29.424122
@@ -35,15 +38,15 @@ for weather in weather_ids:
     if weather < 700:
         raining = True
 
-sender = "dwdeathwolf@gmail.com"
-password = os.environ["APP_PASSWORD"]
+sender = os.getenv("SENDER")
+password = os.getenv("APP_PASSWORD")
 if raining:
     with smtplib.SMTP(host="smtp.gmail.com", port=587) as connection:
         connection.starttls()
         connection.login(user=sender, password=password)
         connection.sendmail(
             from_addr=sender,
-            to_addrs="jhecker2001@gmail.com",
-            msg="Subject:Rain Within 12 Hours\n\nIt is going to rain within the next 12 hours in San Antonio. "
+            to_addrs=os.getenv("RECEIVER"),
+            msg="Subject:Rain Within 12 Hours\n\nIt is going to rain within the next 12 hours. "
                 "Bring an umbrella."
         )
