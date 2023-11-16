@@ -30,4 +30,4 @@ RECEIVER="email_address_receiving_email"
 
 ## Requirements
 
-To run main.py, you will need the requests and dotenv packages, as well as the .env file you are instructed to create above.
+To run main.py, you will need the requests and python-dotenv packages, as well as the .env file you are instructed to create above.
